@@ -1,0 +1,127 @@
+.book-table {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.add-book-button-container {
+  margin: 20px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-field {
+  flex: 1;
+  max-width: 500px;
+  margin-right: 16px;
+
+  .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+  }
+
+  .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+  }
+
+  .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+}
+
+.book-table {
+  width: 100%;
+  margin-top: 20px;
+
+  th.mat-header-cell {
+    background: #e9ecef;
+    color: #495057;
+    font-weight: 600;
+    padding: 12px;
+    font-size: 14px;
+    white-space: nowrap;
+    border-bottom: 2px solid #dee2e6;
+  }
+
+  td.mat-cell {
+    padding: 12px;
+    font-size: 14px;
+    color: #212529;
+    border-bottom: 1px solid #dee2e6;
+    vertical-align: middle;
+  }
+
+  tr.mat-row {
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #f1f3f5;
+    }
+
+    &:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+  }
+}
+
+.mat-elevation-z8 {
+  margin: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+mat-paginator {
+  border-top: 1px solid #dee2e6;
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 0 0 8px 8px;
+}
+
+mat-icon {
+  vertical-align: middle;
+}
+
+button {
+  margin-left: 16px;
+  background-color: #1976d2;
+  color: white;
+  &:hover {
+    background-color: #115293;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 1200px) {
+  .container {
+    padding: 16px;
+  }
+
+  .book-table {
+    th.mat-header-cell,
+    td.mat-cell {
+      padding: 12px;
+      font-size: 13px;
+    }
+  }
+}

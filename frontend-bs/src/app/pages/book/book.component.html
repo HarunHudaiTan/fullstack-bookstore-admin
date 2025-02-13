@@ -1,0 +1,135 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="search-container">
+          <input type="text" class="form-control search-input" 
+                 [(ngModel)]="searchText" 
+                 placeholder="Search books..."
+                 #searchInput>
+        </div>
+        <button class="btn btn-primary add-button" (click)="navigateToAddBook()">
+          <i class="nc-icon nc-simple-add"></i> Add New Book
+        </button>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="text-primary">
+              <tr>
+                <th>Book Name</th>
+                <th>Translator</th>
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Description</th>
+                <th>Publication Date</th>
+                <th>Pages</th>
+                <th>Language</th>
+                <th>Publisher</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let book of books | bookSearch:searchText">
+                <td>{{book.name}}</td>
+                <td>{{book.translatorName || '-'}}</td>
+                <td>{{book.author?.firstName}} {{book.author?.lastName}}</td>
+                <td>{{book.genre?.name}}</td>
+                <td>{{book.genre?.description || '-'}}</td>
+                <td>{{book.publicationDate | date:'MMM d, yyyy'}}</td>
+                <td>{{book.pages}}</td>
+                <td>{{book.language}}</td>
+                <td>{{book.publisher?.name}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination-container">
+          <span class="items-per-page">
+            Items per page: 
+            <select class="form-control items-select">
+              <option>5</option>
+              <option>10</option>
+              <option>25</option>
+              <option>50</option>
+            </select>
+          </span>
+          <span class="page-info">1 - 5 of 5</span>
+          <div class="pagination-controls">
+            <button class="btn btn-link"><i class="nc-icon nc-minimal-left"></i></button>
+            <button class="btn btn-link"><i class="nc-icon nc-minimal-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.search-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 20px;
+}
+
+.search-input {
+  min-width: 300px;
+}
+
+.add-button {
+  float: right;
+}
+
+.card-header {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table thead th {
+  border-top: none;
+  font-weight: 500;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px;
+  gap: 20px;
+}
+
+.items-per-page {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.items-select {
+  width: 70px;
+  display: inline-block;
+}
+
+.page-info {
+  color: #9A9A9A;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.btn-link {
+  padding: 5px;
+  color: #51cbce;
+}
+
+.btn-link:hover {
+  color: #34b5b8;
+}
+</style>
