@@ -11,6 +11,8 @@ import { UpgradeComponent } from '../../pages/upgrade/upgrade.component';
 import { LoginComponent } from '../../pages/login/login.component';
 import { BookComponent } from 'app/pages/book/book.component';
 import { AddBookComponent } from 'app/pages/book/add-book/add-book.component';
+import { EditBookComponent } from 'app/pages/book/edit-book/edit-book.component';
+import { UpdateUserComponent } from 'app/pages/user/update-user/update-user.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -25,5 +27,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'upgrade', component: UpgradeComponent },
     { path: 'book', component: BookComponent },
     { path: 'add-book', component: AddBookComponent },
-
+    { path: 'edit-book', component: EditBookComponent },
+    { path: 'update-user/:id', component: UpdateUserComponent } 
 ];

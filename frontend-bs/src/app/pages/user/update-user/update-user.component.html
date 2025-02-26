@@ -1,0 +1,42 @@
+<div class="container">
+    <h2>Update User</h2>
+  
+    <mat-card class="update-form">
+      <mat-card-content>
+        <form *ngIf="user">
+          
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Username</mat-label>
+            <input matInput [(ngModel)]="user.username" name="username" required>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Name</mat-label>
+            <input matInput [(ngModel)]="user.name" name="name" required>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Surname</mat-label>
+            <input matInput [(ngModel)]="user.surname" name="surname" required>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Surname</mat-label>
+            <input matInput [(ngModel)]="user.surname" name="surname" required>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Authorities</mat-label>
+            <input matInput [(ngModel)]="user.authorities" name="authorities" required>
+          </mat-form-field>
+  
+          <div class="actions">
+            <button mat-raised-button color="primary" (click)="updateUser()">Update User</button>
+            <button mat-button color="warn" routerLink="/user">Cancel</button>
+          </div>
+        </form>
+  
+        <mat-progress-bar *ngIf="!user" mode="indeterminate"></mat-progress-bar>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

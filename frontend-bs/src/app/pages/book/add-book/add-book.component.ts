@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-book',
@@ -31,6 +32,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 })
 export class AddBookComponent implements OnInit {
   book: Book = {
+    id:null,
     name: '',
     translatorName: '',
     genre: {} as Genre,
@@ -48,7 +50,7 @@ export class AddBookComponent implements OnInit {
   authors: Author[] = [];
   languages: string[] = ['English', 'Turkish', 'French', 'German', 'Spanish'];
 
-  constructor(private bookService: BookService) {}
+  constructor(private bookService: BookService,private router:Router) {}
 
   ngOnInit() {
     this.loadGenres();
@@ -97,6 +99,7 @@ export class AddBookComponent implements OnInit {
       next: (response) => {
         console.log('Book added successfully', response);
         this.resetForm();
+       this.router.navigate(['/book'])
       },
       error: (error) => {
         console.error('Error adding book:', error);
@@ -106,6 +109,7 @@ export class AddBookComponent implements OnInit {
 
   private resetForm() {
     this.book = {
+      id:null,
       name: '',
       translatorName: '',
       genre: {} as Genre,

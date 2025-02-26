@@ -3,6 +3,7 @@ import { Publisher } from "./publisher";
 import { Author } from "./author";
 
 export class Book{
+id:number    
 name:string;
 translatorName:string;
 genre:Genre;    
@@ -13,4 +14,5 @@ stockQuantity:number;
 price:number;
 publisher:Publisher;
 author:Author;
+
 }

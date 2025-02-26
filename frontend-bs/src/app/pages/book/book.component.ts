@@ -41,7 +41,12 @@ export class BookComponent implements OnInit {
     );
   }
 
+
   navigateToAddBook() {
     this.router.navigate(['/add-book']);
+  }
+
+  navigateToEditBook() {
+    this.router.navigate(['/edit-book']);
   }
 }

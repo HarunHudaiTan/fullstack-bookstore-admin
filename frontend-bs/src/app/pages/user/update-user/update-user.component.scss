@@ -1,0 +1,72 @@
+.container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+}
+
+.update-form {
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  mat-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+
+  mat-label {
+    font-weight: 500;
+  }
+}
+
+mat-select {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+
+  button {
+    min-width: 120px;
+  }
+}
+
+mat-progress-bar {
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .update-form {
+    padding: 15px;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

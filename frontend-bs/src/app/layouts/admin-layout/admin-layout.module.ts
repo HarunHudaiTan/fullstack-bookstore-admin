@@ -25,18 +25,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     NgbModule,
     BookComponent,
-    AddBookComponent
+    AddBookComponent,
+    UserComponent
   ],
   declarations: [
     DashboardComponent,
-    UserComponent,
     TableComponent,
     UpgradeComponent,
     TypographyComponent,
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
-
   ]
 })
 

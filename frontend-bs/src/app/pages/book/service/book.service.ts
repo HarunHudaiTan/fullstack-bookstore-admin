@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, catchError, finalize, tap, throwError } from 'rxjs';
+import { Observable, catchError, finalize, map, tap, throwError } from 'rxjs';
 import { Book } from '../book';
 import { environment } from 'environments/environment';
 import { BehaviorSubject } from 'rxjs';
@@ -38,6 +38,19 @@ export class BookService {
       })
     );
    }
+   editBooks(id: number, book: Book): Observable<Book> {
+       return this.http.put<Book>(`${environment.apiUrl}/book/update/${id}`, book).pipe(
+           tap((response) => {
+               console.log('Book edited successfully:', response);
+           }),
+           catchError((error) => {
+               console.error('Error editing book:', error);
+               return throwError(() => new Error(error.message || 'Failed to edit book'));
+           })
+       );
+   }
+
+ 
    getAllGenres():Observable<Genre[]>{
     return this.http.get<Genre[]>(environment.apiUrl + '/genre');
    }
@@ -47,5 +60,7 @@ export class BookService {
    getAllAuthors():Observable<Author[]>{
     return this.http.get<Author[]>(environment.apiUrl + '/author');
    }
-  
-}
+   getBookById(id: number): Observable<Book> {
+    return this.http.get<Book>(`${environment.apiUrl}/book/${id}`);
+   }
+   }

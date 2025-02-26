@@ -53,4 +53,32 @@ data class Book(
         publisher = publisher,
         author = author
     )
+    constructor(
+        id: Long?,
+        name: String?,
+        translatorName: String?,
+        genre: Genre?,
+        price: BigDecimal?,
+        publicationDate: String?,
+        pages: Int?,
+        language: String?,
+        stockQuantity: Int?,
+        publisher: Publisher?,
+        author: Author?
+    ) : this(
+        id = id,
+        name = name,
+        translatorName = translatorName,
+        ISBN = null,
+        genre = genre,
+        price = price,
+        publicationDate = publicationDate,
+        pages = pages,
+        language = language,
+        stockQuantity = stockQuantity,
+        publisher = publisher,
+        author = author
+    )
+
+
 }

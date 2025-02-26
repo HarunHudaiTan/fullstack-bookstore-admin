@@ -58,8 +58,8 @@ public class SecurityConfig  {
                .cors(Customizer.withDefaults())
                 .authorizeRequests(x->
                         x.requestMatchers("v1/auth/welcome",
-                                        "v1/auth/addNewUser",
-                                        "v1/bookstore/book",
+                                        "v1/auth/**",
+                                        "v1/bookstore/book/**",
                                         "v1/auth/generateToken").permitAll()
                                 .requestMatchers("v1/auth/userEnd").hasRole("ADMIN")
                                 .requestMatchers("v1/auth/admin/**").hasRole("ADMIN"))

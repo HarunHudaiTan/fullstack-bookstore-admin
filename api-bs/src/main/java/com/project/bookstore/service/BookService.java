@@ -4,7 +4,7 @@ import com.project.bookstore.dto.BookDto;
 import com.project.bookstore.dto.converter.BookDtoConverter;
 import com.project.bookstore.dto.request.CreateBookRequest;
 import com.project.bookstore.dto.request.IncreaseBookStockRequest;
-import com.project.bookstore.dto.request.UpdateBookPriceRequest;
+import com.project.bookstore.dto.request.UpdateBookRequest;
 import com.project.bookstore.exception.BookNotFoundException;
 import com.project.bookstore.model.Book;
 import com.project.bookstore.repository.AuthorRepository;
@@ -50,42 +50,24 @@ public class BookService {
         return bookDtoConverter.convert(bookRepository.save(book));
     }
 
-
-    public BookDto increaseBookStock(Long id, IncreaseBookStockRequest request) {
+    public BookDto updateBook(Long id, UpdateBookRequest request) {
         Book book = findBookById(id);
-        Book updatedBook = new Book(book.getId(),
-                book.getName(),
-                book.getTranslatorName(),
-                book.getISBN(),
-                book.getGenre(),
-                book.getPrice(),
-                book.getPublicationDate(),
-                book.getPages(),
-                book.getLanguage(),
-                book.getStockQuantity() + request.getIncreaseAmount(),
-                book.getPublisher(),
-                book.getAuthor(),
-                book.getOrderItems());
+        Book updatedBook = new Book(
+                book.getId(),
+                request.getName(),
+                request.getTranslatorName(),
+                request.getGenre(),
+                request.getPrice(),
+                request.getPublicationDate(),
+                request.getPages(),
+                request.getLanguage(),
+                request.getStockQuantity(),
+                request.getPublisher(),
+                request.getAuthor()
+        );
         return bookDtoConverter.convert(bookRepository.save(updatedBook));
     }
 
-    public BookDto updateBookPrice(Long id, UpdateBookPriceRequest request) {
-        Book book = findBookById(id);
-        Book updatedBook = new Book(book.getId(),
-                book.getName(),
-                book.getTranslatorName(),
-                book.getISBN(),
-                book.getGenre(),
-                request.getBookPrice(),
-                book.getPublicationDate(),
-                book.getPages(),
-                book.getLanguage(),
-                book.getStockQuantity(),
-                book.getPublisher(),
-                book.getAuthor(),
-                book.getOrderItems());
-        return bookDtoConverter.convert(bookRepository.save(updatedBook));
-    }
 
     public BookDto getBookById(Long id) {
         return bookDtoConverter.convert(bookRepository.findById(id).get());
