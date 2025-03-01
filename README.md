@@ -155,6 +155,3 @@ The application uses JWT for authentication with the following features:
 4. Push to the branch: `git push origin feature-name`
 5. Submit a pull request
 
-## License
-
-This project is licensed under the Apache License 2.0 - see the LICENSE file for details.
