@@ -22,7 +22,7 @@ public class PublisherController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Publisher> getPublisherById(@PathVariable Long id) {
+    public ResponseEntity<Publisher> getPublisherById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(publisherService.getPublisherById(id));
     }
 
@@ -32,13 +32,13 @@ public class PublisherController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletePublisher(@PathVariable Long id) {
+    public ResponseEntity<Void> deletePublisher(@PathVariable("id") Long id) {
         publisherService.deletePublisher(id);
         return ResponseEntity.ok().build();
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Publisher> updatePublisher(@PathVariable Long id, @RequestBody Publisher publisher) {
+    public ResponseEntity<Publisher> updatePublisher(@PathVariable("id") Long id, @RequestBody Publisher publisher) {
         return ResponseEntity.ok(publisherService.updatePublisher(id, publisher));
     }
 } 
