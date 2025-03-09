@@ -25,7 +25,7 @@ export class EditBookComponent implements OnInit{
 
   }
   book: Book = {
-    id:Number(this.route.snapshot.paramMap.get('id')),
+    id:0,
     name: '',
     translatorName: '',
     genre: {} as Genre,

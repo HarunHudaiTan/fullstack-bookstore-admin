@@ -45,54 +45,15 @@ export class AddBookComponent implements OnInit {
     author: {} as Author
   };
 
-  genres: Genre[] = [];
-  publishers: Publisher[] = [];
-  authors: Author[] = [];
+
   languages: string[] = ['English', 'Turkish', 'French', 'German', 'Spanish'];
 
   constructor(private bookService: BookService,private router:Router) {}
 
   ngOnInit() {
-    this.loadGenres();
-    this.loadPublishers();
-    this.loadAuthors();
+
   }
 
-  loadGenres() {
-    this.bookService.getAllGenres().subscribe({
-      next: (data) => {
-        this.genres = data;
-        console.log('Genres loaded:', this.genres);
-      },
-      error: (error) => {
-        console.error('Error loading genres:', error);
-      }
-    });
-  }
-
-  loadPublishers() {
-    this.bookService.getAllPublishers().subscribe({
-      next: (data) => {
-        this.publishers = data;
-        console.log('Publishers loaded:', this.publishers);
-      },
-      error: (error) => {
-        console.error('Error loading publishers:', error);
-      }
-    });
-  }
-
-  loadAuthors() {
-    this.bookService.getAllAuthors().subscribe({
-      next: (data) => {
-        this.authors = data;
-        console.log('Authors loaded:', this.authors);
-      },
-      error: (error) => {
-        console.error('Error loading authors:', error);
-      }
-    });
-  }
 
   addBook() {
     this.bookService.addBook(this.book).subscribe({

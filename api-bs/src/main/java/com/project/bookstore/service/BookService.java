@@ -56,21 +56,21 @@ public class BookService {
                 book.getId(),
                 request.getName(),
                 request.getTranslatorName(),
-                request.getGenre(),
+                book.getGenre(),
                 request.getPrice(),
                 request.getPublicationDate(),
                 request.getPages(),
                 request.getLanguage(),
                 request.getStockQuantity(),
-                request.getPublisher(),
-                request.getAuthor()
+                book.getPublisher(),
+                book.getAuthor()
         );
         return bookDtoConverter.convert(bookRepository.save(updatedBook));
     }
 
 
     public BookDto getBookById(Long id) {
-        return bookDtoConverter.convert(bookRepository.findById(id).get());
+        return bookDtoConverter.convert(findBookById(id));
     }
 
     protected Book findBookById(Long id) {

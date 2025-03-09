@@ -8,10 +8,7 @@
 
     <div class="form-group">
       <label for="author">Author</label>
-      <select id="author" name="author" [(ngModel)]="book.author" required>
-        <option [ngValue]="null">Select Author</option>
-        <option *ngFor="let author of authors" [ngValue]="author">{{author.firstName}} {{author.lastName}}</option>
-      </select>
+      <input type="text" id="author" name="author" [(ngModel)]="book.author.firstName" required>
     </div>
 
     <div class="form-group">
@@ -21,10 +18,7 @@
 
     <div class="form-group">
       <label for="genre">Genre</label>
-      <select id="genre" name="genre" [(ngModel)]="book.genre" required>
-        <option [ngValue]="null">Select Genre</option>
-        <option *ngFor="let genre of genres" [ngValue]="genre">{{genre.name}}</option>
-      </select>
+      <input type="text" id="genre" name="genre" [(ngModel)]="book.genre.name" required>
     </div>
     <div class="form-group">
         <label for="genreDescription">Genre Description</label>
@@ -61,10 +55,7 @@
 
     <div class="form-group">
       <label for="publisher">Publisher</label>
-      <select id="publisher" name="publisher" [(ngModel)]="book.publisher" required>
-        <option [ngValue]="null">Select Publisher</option>
-        <option *ngFor="let publisher of publishers" [ngValue]="publisher">{{publisher.name}}</option>
-      </select>
+      <input type="text" id="publisher" name="book.publisher.name" [(ngModel)]="book.publisher.name" required>
     </div>
 
     <div class="form-actions">
