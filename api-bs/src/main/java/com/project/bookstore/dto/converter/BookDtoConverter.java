@@ -19,8 +19,8 @@ public BookDtoConverter(AuthorDtoConverter authorDtoConverter, GenreDtoConverter
 }
 
     public BookDto convert(Book from) {
-        return new BookDto((from.getName()),
-                (from.getTranslatorName()),
+        return new BookDto(from.getId(),from.getName(),
+                from.getTranslatorName(),
                 genreDtoConverter.convert(from.getGenre()),
                 from.getPrice(),
                 from.getPublicationDate(),

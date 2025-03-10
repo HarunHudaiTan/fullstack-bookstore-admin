@@ -56,14 +56,14 @@ public class BookService {
                 book.getId(),
                 request.getName(),
                 request.getTranslatorName(),
-                book.getGenre(),
+                request.getGenre(),
                 request.getPrice(),
                 request.getPublicationDate(),
                 request.getPages(),
                 request.getLanguage(),
                 request.getStockQuantity(),
-                book.getPublisher(),
-                book.getAuthor()
+                request.getPublisher(),
+                request.getAuthor()
         );
         return bookDtoConverter.convert(bookRepository.save(updatedBook));
     }

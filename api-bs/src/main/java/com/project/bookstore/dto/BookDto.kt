@@ -4,6 +4,7 @@ package com.project.bookstore.dto
 import com.project.bookstore.model.Publisher
 import java.math.BigDecimal
 data class BookDto(
+    val id: Long,
     val name:String,
     val translatorName:String,
     val genre:GenreDto?,

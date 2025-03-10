@@ -27,6 +27,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'upgrade', component: UpgradeComponent },
     { path: 'book', component: BookComponent },
     { path: 'add-book', component: AddBookComponent },
-    { path: 'edit-book', component: EditBookComponent },
+    { path: 'edit-book/:id', component: EditBookComponent },
     { path: 'update-user/:id', component: UpdateUserComponent } 
 ];
