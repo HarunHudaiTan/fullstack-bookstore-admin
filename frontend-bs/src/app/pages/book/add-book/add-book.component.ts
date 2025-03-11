@@ -3,7 +3,7 @@ import { BookService } from '../service/book.service';
 import { Book } from '../book';
 import { Genre } from '../genre';
 import { Publisher } from '../publisher';
-import { Author } from '../author';
+import { Author } from '../../author/author';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';

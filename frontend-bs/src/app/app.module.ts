@@ -27,8 +27,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input'; 
 import { MatSelectModule } from '@angular/material/select';   
 import { AuthGuard } from './guards/auth.guard';
-
-@NgModule({
+ @NgModule({
   declarations: [
     AppComponent,
     AdminLayoutComponent,

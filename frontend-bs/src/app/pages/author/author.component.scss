@@ -1,0 +1,157 @@
+// Authors Table Component Styling
+
+.card {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 30px;
+    
+    .card-header {
+      background-color: #fff;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      .search-container {
+        flex: 1;
+        max-width: 300px;
+        
+        .search-input {
+          border-radius: 20px;
+          padding-left: 15px;
+          border: 1px solid #ddd;
+          
+          &:focus {
+            box-shadow: none;
+            border-color: #9A9A9A;
+          }
+        }
+      }
+      
+      .add-button {
+        border-radius: 20px;
+        padding: 8px 16px;
+        
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+    
+    .card-body {
+      padding: 15px 20px;
+      
+      .table {
+        margin-bottom: 0;
+        
+        thead {
+          th {
+            font-weight: 500;
+            color: #51cbce;
+            border-top: none;
+            border-bottom: 1px solid #eee;
+            padding: 12px 8px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+          }
+        }
+        
+        tbody {
+          tr {
+            transition: background-color 0.2s ease;
+            
+            &:hover {
+              background-color: rgba(81, 203, 206, 0.05);
+            }
+            
+            td {
+              padding: 12px 8px;
+              vertical-align: middle;
+              border-bottom: 1px solid #f5f5f5;
+              
+              .btn-sm {
+                padding: 5px 10px;
+                font-size: 0.8em;
+                
+                i {
+                  margin-right: 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+      
+      .pagination-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 15px;
+        font-size: 0.85em;
+        
+        .items-per-page {
+          display: flex;
+          align-items: center;
+          
+          .items-select {
+            width: 60px;
+            margin-left: 10px;
+            display: inline-block;
+            padding: 2px 5px;
+            height: auto;
+          }
+        }
+        
+        .page-info {
+          color: #9A9A9A;
+        }
+        
+        .pagination-controls {
+          .btn-link {
+            color: #51cbce;
+            padding: 5px 10px;
+            
+            &:hover {
+              color: darken(#51cbce, 10%);
+            }
+            
+            &:disabled {
+              color: #ddd;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    .card {
+      .card-header {
+        flex-direction: column;
+        align-items: stretch;
+        
+        .search-container {
+          max-width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+      
+      .card-body {
+        .pagination-container {
+          flex-direction: column;
+          align-items: flex-start;
+          
+          .items-per-page {
+            margin-bottom: 10px;
+          }
+          
+          .page-info {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }

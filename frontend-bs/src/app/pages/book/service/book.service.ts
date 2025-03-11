@@ -5,7 +5,7 @@ import { Book } from '../book';
 import { environment } from 'environments/environment';
 import { BehaviorSubject } from 'rxjs';
 import { Genre } from '../genre';
-import { Author } from '../author';
+import { Author } from '../../author/author';
 import { Publisher } from '../publisher';
 
 @Injectable({

@@ -18,7 +18,7 @@ data class CreateBookRequest(
     val language:String?,
     val stockQuantity:Int?,
     val publisher: Publisher?,
-    val author:Author?
+    val author:CreateAuthorRequest?
 
 
 )

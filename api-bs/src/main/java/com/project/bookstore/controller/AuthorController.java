@@ -1,5 +1,7 @@
 package com.project.bookstore.controller;
 
+import com.project.bookstore.dto.request.CreateAuthorRequest;
+import com.project.bookstore.dto.request.UpdateAuthorRequest;
 import com.project.bookstore.model.Author;
 import com.project.bookstore.service.AuthorService;
 import org.springframework.http.ResponseEntity;
@@ -17,8 +19,8 @@ public class AuthorController {
     }
 
     @PostMapping
-    public ResponseEntity<Author> createAuthor(@RequestBody Author author) {
-        return ResponseEntity.ok(authorService.createAuthor(author));
+    public ResponseEntity<Author> createAuthor(@RequestBody CreateAuthorRequest request) {
+        return ResponseEntity.ok(authorService.createAuthor(request));
     }
 
     @GetMapping("/{id}")
@@ -38,7 +40,7 @@ public class AuthorController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Author> updateAuthor(@PathVariable("id") Long id, @RequestBody Author author) {
-        return ResponseEntity.ok(authorService.updateAuthor(id, author));
+    public ResponseEntity<Author> updateAuthor(@PathVariable("id") Long id, @RequestBody UpdateAuthorRequest request) {
+        return ResponseEntity.ok(authorService.updateAuthor(id, request));
     }
 } 

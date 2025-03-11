@@ -1,6 +1,8 @@
 package com.project.bookstore.service;
 
 
+import com.project.bookstore.dto.request.CreateAuthorRequest;
+import com.project.bookstore.dto.request.UpdateAuthorRequest;
 import com.project.bookstore.model.Author;
 import com.project.bookstore.repository.AuthorRepository;
 import org.springframework.stereotype.Service;
@@ -13,8 +15,9 @@ public class AuthorService {
     public AuthorService(AuthorRepository authorRepository) {
         this.authorRepository = authorRepository;
     }
-    public Author createAuthor(Author author) {
-        return authorRepository.save(author);
+    public Author createAuthor(CreateAuthorRequest request) {
+       Author author = new Author(request.getFirstName(),request.getLastName());
+       return authorRepository.save(author);
     }
 
     public Author getAuthorById(Long id) {
@@ -30,12 +33,12 @@ public class AuthorService {
         authorRepository.deleteById(id);
     }
 
-    public Author updateAuthor(Long id, Author author) {
+    public Author updateAuthor(Long id, UpdateAuthorRequest request) {
         Author existingAuthor = getAuthorById(id);
         Author updatedAuthor = new Author(
                 existingAuthor.getId(),
-                author.getFirstName(),
-                author.getLastName(),
+                request.getFirstName(),
+                request.getLastName(),
                 existingAuthor.getBooks()
         );
         return authorRepository.save(updatedAuthor);

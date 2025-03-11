@@ -12,4 +12,13 @@ data class Author(
 
     val books: Set<Book>?
 
-)
+) {
+    constructor(firstName: String, lastName: String) : this(
+        id = null,
+        firstName = firstName,
+        lastName = lastName,
+        books=null
+    )
+
+
+}

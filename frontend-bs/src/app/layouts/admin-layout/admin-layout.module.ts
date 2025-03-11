@@ -15,6 +15,7 @@ import { NotificationsComponent }   from '../../pages/notifications/notification
 import { UpgradeComponent }         from '../../pages/upgrade/upgrade.component';
 import { BookComponent }            from '../../pages/book/book.component';
 import { AddBookComponent }         from '../../pages/book/add-book/add-book.component';
+import { AuthorComponent }          from '../../pages/author/author.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -24,6 +25,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RouterModule.forChild(AdminLayoutRoutes),
     FormsModule,
     NgbModule,
+    AuthorComponent,
     BookComponent,
     AddBookComponent,
     UserComponent
@@ -36,6 +38,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
+  
   ]
 })
 

@@ -64,3 +64,17 @@ import "zone.js/dist/zone"; // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+// Node.js polyfills
+(window as any).global = window;
+(window as any).process = {
+  env: { DEBUG: undefined },
+  browser:true
+};
+
+// Buffer polyfill
+import { Buffer } from 'buffer';
+(window as any).Buffer = Buffer;
+
+// Webpack specific polyfills
+import 'path-browserify';

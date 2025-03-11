@@ -13,6 +13,7 @@ import { BookComponent } from 'app/pages/book/book.component';
 import { AddBookComponent } from 'app/pages/book/add-book/add-book.component';
 import { EditBookComponent } from 'app/pages/book/edit-book/edit-book.component';
 import { UpdateUserComponent } from 'app/pages/user/update-user/update-user.component';
+import { AuthorComponent } from 'app/pages/author/author.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -28,5 +29,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'book', component: BookComponent },
     { path: 'add-book', component: AddBookComponent },
     { path: 'edit-book/:id', component: EditBookComponent },
-    { path: 'update-user/:id', component: UpdateUserComponent } 
+    { path: 'update-user/:id', component: UpdateUserComponent },
+     {path:'author',component:AuthorComponent}
 ];

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookService } from '../service/book.service';
 import { Book } from '../book';
 import { Genre } from '../genre';
-import { Author } from '../author';
+import { Author } from '../../author/author';
 import { Publisher } from '../publisher';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -44,9 +44,7 @@ export class EditBookComponent implements OnInit {
     private bookService: BookService,
     private router: Router,
     private route: ActivatedRoute) {
-      this.route.paramMap.subscribe(params => {
-        console.log('Route params:', params);
-          });
+
     }
 
   ngOnInit(): void {
@@ -126,7 +124,5 @@ export class EditBookComponent implements OnInit {
   }
 
   // Optional: Add a cancel method to return to the book list
-  cancel(): void {
-    this.router.navigate(['/book']);
-  }
+
 }
