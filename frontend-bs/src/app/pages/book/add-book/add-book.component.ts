@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../service/book.service';
 import { Book } from '../book';
-import { Genre } from '../genre';
+import { Genre } from '../../genre/genre';
 import { Publisher } from '../publisher';
 import { Author } from '../../author/author';
 import { CommonModule } from '@angular/common';

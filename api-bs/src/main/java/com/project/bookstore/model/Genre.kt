@@ -13,3 +13,6 @@ data class Genre(
     @JsonManagedReference
     val books: List<Book>?
 )
+{
+
+}

@@ -3,7 +3,6 @@ package com.project.bookstore.service;
 import com.project.bookstore.dto.BookDto;
 import com.project.bookstore.dto.converter.BookDtoConverter;
 import com.project.bookstore.dto.request.CreateBookRequest;
-import com.project.bookstore.dto.request.IncreaseBookStockRequest;
 import com.project.bookstore.dto.request.UpdateBookRequest;
 import com.project.bookstore.exception.BookNotFoundException;
 import com.project.bookstore.model.Book;
@@ -56,7 +55,7 @@ public class BookService {
                 book.getId(),
                 request.getName(),
                 request.getTranslatorName(),
-                request.getGenre(),
+                book.getGenre(),
                 request.getPrice(),
                 request.getPublicationDate(),
                 request.getPages(),

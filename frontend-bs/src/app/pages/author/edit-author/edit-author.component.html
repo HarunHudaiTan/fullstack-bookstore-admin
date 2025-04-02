@@ -1,7 +1,6 @@
-<div class="add-author-container">
-    <h2>Add New Author</h2>
-    
-    <form (ngSubmit)="addAuthor()" #authorForm="ngForm">
+<div class="edit-author-container">
+    <h2>Edit Author</h2>
+    <form (ngSubmit)="editAuthor()" #authorForm="ngForm">
       <div class="form-group">
         <label for="firstName">First Name</label>
         <input 
@@ -9,13 +8,14 @@
           id="firstName" 
           name="firstName" 
           [(ngModel)]="author.firstName" 
-          required 
+          required
+          class="form-control"
           #firstName="ngModel">
-        <div class="error-message" *ngIf="firstName.invalid && firstName.touched">
+        <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="error-message">
           First name is required
         </div>
       </div>
-      
+  
       <div class="form-group">
         <label for="lastName">Last Name</label>
         <input 
@@ -23,16 +23,17 @@
           id="lastName" 
           name="lastName" 
           [(ngModel)]="author.lastName" 
-          required 
+          required
+          class="form-control"
           #lastName="ngModel">
-        <div class="error-message" *ngIf="lastName.invalid && lastName.touched">
+        <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="error-message">
           Last name is required
         </div>
       </div>
-      
+  
       <div class="button-group">
-        <button type="submit" [disabled]="authorForm.invalid" class="submit-btn">Add Author</button>
-        <button type="button" class="cancel-btn" routerLink="/author">Cancel</button>
+        <button type="submit" [disabled]="!authorForm.valid" class="btn-save">Save</button>
+        <button type="button" routerLink="/author" class="btn-cancel">Cancel</button>
       </div>
     </form>
   </div>

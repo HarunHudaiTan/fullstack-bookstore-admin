@@ -14,6 +14,14 @@ export class AuthorService {
   getAllAuthors():Observable<Author[]>{
     return this.http.get<Author[]>(environment.apiUrl+"/author");
   }
+
+  getAuthorById(id:number):Observable<Author>{
+   return this.http.get<Author>(`${environment.apiUrl}/author/${id}`)
+  }
+
+ 
+
+
   addAuthor(author:Author):Observable<Author>{
     return this.http.post<Author>(environment.apiUrl+"/author",author).pipe(
       tap((response=>{

@@ -38,7 +38,7 @@ public class UserService implements UserDetailsService {
         return findUserById(id);
     }
 
-    public List<User> listAllUsers() {
+    public List<User> listAllUsers()         {
         return userRepository.findAll();
     }
 

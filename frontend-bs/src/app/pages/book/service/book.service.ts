@@ -4,7 +4,7 @@ import { Observable, catchError, finalize, map, tap, throwError } from 'rxjs';
 import { Book } from '../book';
 import { environment } from 'environments/environment';
 import { BehaviorSubject } from 'rxjs';
-import { Genre } from '../genre';
+import { Genre } from '../../genre/genre';
 import { Author } from '../../author/author';
 import { Publisher } from '../publisher';
 

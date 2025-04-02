@@ -1,0 +1,111 @@
+.add-author-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 800px;
+  margin: 30px auto;
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+      font-size: 0.95em;
+    }
+    
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: border-color 0.2s ease;
+      
+      &:focus {
+        outline: none;
+        border-color: #9A9A9A;
+        box-shadow: none;
+      }
+      
+      &.ng-invalid.ng-touched {
+        border-color: #dc3545;
+      }
+    }
+    
+    .error-message {
+      color: #dc3545;
+      font-size: 0.8rem;
+      margin-top: 5px;
+    }
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 30px;
+    
+    button {
+      flex: 1;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      
+      &:active {
+        transform: translateY(1px);
+      }
+      
+      &:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    }
+    
+    .submit-btn {
+      background-color: #51cbce;
+      color: white;
+      
+      &:hover:not(:disabled) {
+        background-color: darken(#51cbce, 8%);
+      }
+    }
+    
+    .cancel-btn {
+      background-color: #6c757d;
+      color: white;
+      
+      &:hover {
+        background-color: darken(#6c757d, 8%);
+      }
+    }
+  }
+}
+
+// Paper Dashboard style overrides
+@media (max-width: 768px) {
+  .add-author-container {
+    padding: 20px;
+    margin: 15px;
+    
+    .button-group {
+      flex-direction: column;
+      
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { AuthorService } from './service/author.service';
 import { Author } from './author';
-import { response } from 'express';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-author',
   standalone: true,
@@ -16,7 +16,7 @@ export class AuthorComponent implements OnInit {
 
   authors:Author[]=[];
   searchText: string = '';
-constructor(private authorServie:AuthorService){
+constructor(private authorServie:AuthorService,private router:Router){
 
 
 }
@@ -34,6 +34,13 @@ constructor(private authorServie:AuthorService){
         console.log("Error loading books: " + error.message)
       }
     );
+  }
+
+  navigateToAddAuthor(){
+    this.router.navigate(['/add-author'])
+  }
+  navigateToEditAuthor(id:number){
+    this.router.navigate(['/edit-author',id])
   }
 
 

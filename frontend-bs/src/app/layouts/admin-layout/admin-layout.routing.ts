@@ -14,6 +14,11 @@ import { AddBookComponent } from 'app/pages/book/add-book/add-book.component';
 import { EditBookComponent } from 'app/pages/book/edit-book/edit-book.component';
 import { UpdateUserComponent } from 'app/pages/user/update-user/update-user.component';
 import { AuthorComponent } from 'app/pages/author/author.component';
+import { AddAuthorComponent } from 'app/pages/author/add-author/add-author.component';
+import { EditAuthorComponent } from 'app/pages/author/edit-author/edit-author.component';
+import { GenreComponent } from 'app/pages/genre/genre.component';
+import { AddGenreComponent } from 'app/pages/genre/add-genre/add-genre.component';
+import { EditGenreComponent } from 'app/pages/genre/edit-genre/edit-genre.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -30,5 +35,10 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'add-book', component: AddBookComponent },
     { path: 'edit-book/:id', component: EditBookComponent },
     { path: 'update-user/:id', component: UpdateUserComponent },
-     {path:'author',component:AuthorComponent}
+     {path:'author',component:AuthorComponent},
+     {path:'add-author',component:AddAuthorComponent},
+     {path: 'edit-author/:id', component: EditAuthorComponent },
+     {path:'genre',component:GenreComponent},
+     {path:'add-genre',component:AddGenreComponent},
+     { path: 'edit-genre/:id', component: EditGenreComponent },
 ];

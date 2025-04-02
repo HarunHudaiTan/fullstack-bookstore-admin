@@ -18,6 +18,7 @@ import { AddBookComponent }         from '../../pages/book/add-book/add-book.com
 import { AuthorComponent }          from '../../pages/author/author.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { GenreComponent } from 'app/pages/genre/genre.component';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AuthorComponent,
     BookComponent,
     AddBookComponent,
-    UserComponent
+    UserComponent,
+    GenreComponent
   ],
   declarations: [
     DashboardComponent,

@@ -2,16 +2,16 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <!-- <div class="search-container">
+        <div class="search-container">
           <input type="text" class="form-control search-input" 
                  [(ngModel)]="searchText" 
                  placeholder="Search authors..."
-                 #searchInput> -->
+                 #searchInput>
         </div>
-        <!-- <button class="btn btn-primary add-button" (click)="navigateToAddauthor()"> -->
-          <!-- <i class="nc-icon nc-simple-add"></i> Add New author -->
-        <!-- </button> -->
-      <!-- </div> -->
+        <button class="btn btn-primary add-button" (click)="navigateToAddAuthor()">
+          <i class="nc-icon nc-simple-add"></i> Add New author
+        </button>
+      </div>
       <div class="card-body">
         <div class="table-responsive">
           <table class="table">
@@ -28,9 +28,9 @@
                 <td>{{author.lastName}}</td>
  
                 <td>
-                  <!-- <button class="btn btn-primary btn-sm" (click)="navigateToEditauthor(author.id)">
+                  <button class="btn btn-primary btn-sm" (click)="navigateToEditAuthor(author.id)">
                     <i class="nc-icon nc-settings-gear-65"></i> Edit
-                  </button> -->
+                  </button>
                 </td>
               </tr>
             </tbody>

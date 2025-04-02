@@ -1,0 +1,190 @@
+// Genre Listing Component Styles
+
+// Variables
+$primary-color: #51cbce;
+$primary-dark: darken($primary-color, 10%);
+$primary-light: lighten($primary-color, 10%);
+$text-color: #66615b;
+$light-gray: #f4f3ef;
+$border-color: #ddd;
+$white: #fff;
+$box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+// Card Styles
+.card {
+  border-radius: 12px;
+  box-shadow: $box-shadow;
+  margin-bottom: 30px;
+  background-color: $white;
+  border: none;
+  
+  .card-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid $border-color;
+    background-color: $white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .search-container {
+      flex: 1;
+      position: relative;
+      max-width: 300px;
+      
+      .search-input {
+        border-radius: 25px;
+        padding-left: 15px;
+        border: 1px solid $border-color;
+        transition: border-color 0.3s, box-shadow 0.3s;
+        
+        &:focus {
+          border-color: $primary-color;
+          box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.25);
+          outline: none;
+        }
+      }
+    }
+    
+    .add-button {
+      background-color: $primary-color;
+      border-color: $primary-color;
+      border-radius: 25px;
+      padding: 8px 16px;
+      transition: all 0.3s;
+      
+      &:hover {
+        background-color: $primary-dark;
+        border-color: $primary-dark;
+      }
+      
+      i {
+        margin-right: 5px;
+      }
+    }
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+}
+
+// Table Styles
+table.table {
+  width: 100%;
+  margin-bottom: 0;
+  
+  thead.text-primary {
+    tr th {
+      color: $primary-color;
+      font-weight: 600;
+
+      padding: 12px 8px;
+    }
+  }
+  
+  tbody {
+    tr {
+      transition: background-color 0.3s ease;
+      
+      &:hover {
+        background-color: $light-gray;
+      }
+      
+      td {
+        padding: 12px 8px;
+        vertical-align: middle;
+        border-top: 1px solid $border-color;
+        color: $text-color;
+        
+        .btn-sm {
+          border-radius: 25px;
+          padding: 5px 10px;
+          
+          i {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Pagination Styles
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  flex-wrap: wrap;
+  
+  .items-per-page {
+    display: flex;
+    align-items: center;
+    color: $text-color;
+    font-size: 14px;
+    
+    .items-select {
+      width: 65px;
+      margin-left: 10px;
+      border-radius: 4px;
+      padding: 4px;
+      border: 1px solid $border-color;
+    }
+  }
+  
+  .page-info {
+    color: $text-color;
+    font-size: 14px;
+  }
+  
+  .pagination-controls {
+    .btn-link {
+      color: $primary-color;
+      padding: 5px;
+      
+      &:hover {
+        color: $primary-dark;
+        text-decoration: none;
+      }
+      
+      &:disabled {
+        color: $border-color;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+// Responsive Adjustments
+@media (max-width: 768px) {
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start !important;
+    
+    .search-container {
+      max-width: 100% !important;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    
+    .add-button {
+      width: 100%;
+    }
+  }
+  
+  .pagination-container {
+    flex-direction: column;
+    align-items: flex-start;
+    
+    .items-per-page,
+    .page-info {
+      margin-bottom: 10px;
+    }
+    
+    .pagination-controls {
+      align-self: center;
+    }
+  }
+}
